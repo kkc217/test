@@ -1,0 +1,1 @@
+ALTER TABLE board add title varchar(100);

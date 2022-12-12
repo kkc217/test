@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${mysql.datasource.url}
+    username: ${mysql.datasource.username}
+    password: ${mysql.datasource.password}
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    url: ${mysql.datasource.url}
+    user: ${mysql.datasource.username}
+    password: ${mysql.datasource.password}
+    baseline-version: 0
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
